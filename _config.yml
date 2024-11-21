@@ -1,0 +1,109 @@
+# Site settings
+title:       SnazzyMo
+author:      SnazzyMo
+description: "SnazzyMo"
+baseurl:     ""
+url:         "https://snazzymo.com"
+date_format: "%b %-d, %Y"
+email: hello@snazzymo.com
+bio: 🎞️ video interaction platform
+author_pic: /assets/images/me/current.png
+
+# blog settings
+permalink: /blog/:title.html
+atom_path: /blog/atom.xml
+paginate_path: /blog/page:num
+
+# Google services
+google_verification:
+# Use either direct GA implementation or set up GTM account
+# - using both will skew your data (leave blank to not use at all)
+google_analytics:
+google_tag_manager:
+# Bing services
+bing_verification:
+
+# Optional features
+show_related_posts:   false
+show_post_footers:    false
+show_social_icons:    true
+
+# Disqus post comments
+# (leave blank to disable Disqus)
+disqus_shortname: 
+
+# Social icons
+github_username: snazzymo
+stackoverflow_id: 
+twitter_username: snazzymo_app
+
+# Post sharing icons
+show_sharing_icons: true
+# Change to 'true' to enable individual icons
+share_twitter: true
+
+text:
+  share_buttons:
+    text:         'Share this post'
+  post:
+    updated:        'Updated'
+    minute_read:    'minute read'
+    related_posts:  'Related Posts'
+  index:
+    coming_soon: 'wow, such empty'
+  og_locale: 'en_US'
+
+jekyll-mentions: https://twitter.com
+
+# Build settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter_opts:
+      block:
+          line_numbers: true
+
+redcarpet:
+  extensions: ['smart', 'tables', 'with_toc_data']
+# permalink:    /:title/
+paginate:     6
+plugins:
+   - jekyll-paginate
+   - jekyll-sitemap
+   - jemoji
+   - jekyll-mentions
+   - jekyll-seo-tag
+   - jekyll-feed
+   - jekyll-gist
+   - jekyll-paginate
+   - jekyll-redirect-from
+# https://github.com/jekyll/jekyll/issues/2938
+exclude: 
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - gulpfile.js
+  - package.json
+  - _site
+  - src
+  - vendor
+  - CNAME
+  - indigo-gh-pages.zip
+  - Rakefile
+  - screen-shot.png
+  - travis.sh
+  - tasks
+
+read-time: false
+
+# do you want to show the "tags" inside the posts?
+show-tags: true
+
+# show author block at the end of a post ?
+# show-author: true
+
+# show next & prev links in blog post?
+blog-nav-links: false
+
+timezone: Asia/Kolkata

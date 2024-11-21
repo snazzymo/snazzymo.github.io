@@ -1,0 +1,8 @@
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+	<ShortName>SnazzyMo</ShortName>
+	<Description>SnazzyMo Blog</Description>
+	<Url type="text/html" method="get" template="https://snazzymo.com/search?q={searchTerms}"/>
+	<Image width="16" height="16">https://snazzymo.com/assets/icons/icon.png</Image>
+	<InputEncoding>UTF-8</InputEncoding>
+	<SearchForm>https://snazzymo.com/</SearchForm>
+</OpenSearchDescription>

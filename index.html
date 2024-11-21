@@ -1,30 +1,51 @@
+---
+layout: index
+meta_description: SnazzyMo - video interaction platform.
+summary: SnazzyMo - video interaction platform
+---
+<div class="container-fluid" id="index_page">
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="theme-color" content="#000000" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>SnazzyMo</title>
+	<div class="text-center">
+		<img src="/assets/images/me/current.png" alt="" class="img-fluid" id="author_img">
+		<h1>SnazzyMo</h1>
+	</div>
 
-	<meta name="robots" content="all">
-	<meta name="author" content="Vijayant Katyal">
-	<link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="SnazzyMo">
-	<meta name="description" content="SnazzyMo - video interaction platform.">
-	<meta name="keywords" content="saas, video, interaction">
+	<div class="summary_card m_t_20 m_b_10 text_center">
+		👋, video interaction platform
+	</div>
+	
+	<div class="summary_card m_t_10 text_center">
+		<b class="title">currently being developed by <a target="blank" href="https://vijayantkatyal.com">Vijayant Katyal</a></b>
+	</div>
+	
+	
+	<!-- <div class="summary_card">
+		<b class="title">recent <a href="/projects">projects</a></b>
+		<br>
+		<div id="projects">
+			<div class="project">
+				<a href="http://lpal.net">Lead Pal</a>
+				<br>
+				<span class="description">
+					Lead Generation (SAAS Product) using links and popups. user can use email or any social platform (twitter, google , facebook , etc.)
+				</span>
+			</div>
+			<div class="project">
+				<a href="http://adott.ca">Adott</a>
+				<br>
+				<span class="description">
+					online liquor store from canda
+				</span>
+			</div>
+		</div>
+	</div> -->
 
-	<!-- <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/icon.png"> -->
-
-	<link rel="me" type="text/html" href="https://github.com/snazzymo" />
-	<link rel="me" type="text/html" href="https://snazzymo.com/blog/atom.xml" />
-	<link rel="me" type="text/html" href="https://x.com/vijayantkatyal" />
-
-	<link href="/blog/atom.xml" type="application/atom+xml" rel="alternate" title="SnazzyMo Blog">
-	<link rel="canonical" href="https://snazzymo.com/">
-
-</head>
-<body>
-	<h3>hello from snazzymo.com</h3>	
-</body>
-</html>
+	<div class="summary_card text_center">
+		<b class="title">check recent updates from our <a href="/blog">blog</a></b>
+		<div class="description">
+			{% for post in site.posts limit:3 %}
+				<a href="{{ post.id }}">{{ post.title }}</a><br>
+			{% endfor %}
+		</div>
+	</div>
+</div>

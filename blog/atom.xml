@@ -1,0 +1,31 @@
+---
+title: SnazzyMo Blog Atom Feed
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+
+  <title>SnazzyMo Blog</title>
+  <subtitle>SnazzyMo - video interaction platform</subtitle>
+  <link href="{{ site.url }}{{ site.atom_path }}" rel="self"/>
+  <link href="{{ site.url }}"/>
+  <updated>{{ site.time | date_to_xmlschema }}</updated>
+  <id>{{ site.url }}/blog/atom.xml</id>
+  <icon>{{ site.url }}/assets/icons/icon.png</icon>
+  <author>
+    <name>{{ site.author }}</name>
+  </author>
+
+  {% for post in site.posts %}
+  <entry>
+    <title>{{ post.title }}</title>
+    <link href="{{ site.url }}{{ post.url }}"/>
+    <published>{{ post.date | date_to_xmlschema }}</published>
+    <updated>{{ post.date | date_to_xmlschema }}</updated>
+    <id>{{ site.url }}{{ post.id }}</id>
+    <content type="html">{{ post.content | xml_escape }}</content>
+    <author>
+      <name>{{ site.author }}</name>
+    </author>
+  </entry>
+  {% endfor %}
+</feed>

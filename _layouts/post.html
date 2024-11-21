@@ -1,0 +1,56 @@
+---
+layout: post_container
+show_blog_link: true
+---
+
+<div class="post_header">
+	<h1 class="display-4" itemprop="name headline">
+		{{ page.title }}
+	</h1>
+	<br>
+	<p class="lead">
+		<span itemprop="datePublished">{{ page.date | date: site.date_format }}</span> {% if page.update_date %} | <span class="text-success">{{ site.text.post.updated }}: {{ page.update_date | date: site.date_format }}</span> {% endif %} {% if page.comments != false %} | <a href="{{ page.url | prepend: site.baseurl }}#disqus_thread" data-discuss-identifier="{{ page.id }}">0 Comments</a> {% endif %}
+	</p>
+	{% for category in page.categories %}
+		<a class="badge bg-secondary" itemprop="keywords" href="/blog/category/{{ category }}">{{ category }}</a>
+	{% endfor %}
+</div>
+<br>
+
+
+{% if page.intro_image != null %}
+	<br>
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="col-xs-10 offset-xs-1">
+				<img class="img-fluid" src="/assets/{{ page.intro_image }}" alt="">
+			</div>
+		</div>
+	</div>
+	<br>
+{% endif %}
+
+<div itemprop="articleBody">	
+	<div>
+		{{ content }}
+	</div>
+	<br>
+	<div>
+		{% if site.show_sharing_icons %}
+			{% include share_buttons.html %}
+			<br>
+		{% endif %}
+
+		{% if site.show_related_posts %}
+			<h3 class="related-post-title">{{ site.text.post.related_posts }}</h3>
+			{% for post in site.related_posts %}
+				<div class="post ml2">
+					<a href="{{ post.url | prepend: site.baseurl }}" class="post-link">
+						<h4 class="post-title">{{ post.title }}</h4>
+						<p class="post-summary">{{ post.summary }}</p>
+					</a>
+			</div>
+			{% endfor %}
+		{% endif %}
+	</div>
+</div>

@@ -1,0 +1,56 @@
+---
+layout: index
+permalink: /search
+---
+
+<script>
+	(function() {
+		var cx = '003449161591737793502:_drki_ovua8';
+		var gcse = document.createElement('script');
+		gcse.type = 'text/javascript';
+		gcse.async = true;
+		gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+		var s = document.getElementsByTagName('script')[0];
+		s.parentNode.insertBefore(gcse, s);
+	})();
+</script>
+
+<style>
+	.badge{
+		padding: 0.7em .6em;
+		font-size: 100%;
+		margin-top: 10px;
+	}
+</style>
+
+<div class="container-fluid" id="blog_page">
+	<div class="row">
+		<div class="col-12 col-sm-12 col-md-10 ml-auto mr-auto">
+			<div class="container">
+				<br><br>
+				<h1>Search</h1>
+				<hr>
+				<div class="container">
+					<gcse:searchbox></gcse:searchbox>
+					<gcse:searchresults></gcse:searchresults>
+				</div>
+				<br><br>
+
+				<h2>All Categories</h2>
+				<br>
+
+				{% assign categories_list = site.categories %}
+				{% if categories_list.first[0] == null %}
+					{% for category in categories_list %}
+						<a itemprop="keywords" href="/blog/category/{{ category }}" class="bg badge-secondary">{{ category }}</a>
+					{% endfor %}
+				{% else %}
+					{% for category in categories_list %}
+						<a itemprop="keywords" href="/blog/category/{{ category[0] }}" class="badge bg-secondary">{{ category[0] }}</a>
+					{% endfor %}
+				{% endif %}
+				{% assign categories_list = nil %}
+			</div>
+		</div>
+	</div>
+</div>
